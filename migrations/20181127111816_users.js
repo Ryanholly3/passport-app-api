@@ -1,6 +1,6 @@
 exports.up = function(knex, Promise) {
   return knex.schema.createTable("passport_users", function(table) {
-    table.increment()
+    table.increments()
     table.string("name")
     table.string("email")
     table.integer("age")

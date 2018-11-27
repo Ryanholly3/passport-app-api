@@ -1,10 +1,11 @@
 exports.up = function(knex, Promise) {
   return knex.schema.createTable("visited", function(table) {
     table.increments()
-    table.float("lat")
-    table.float("long")
+    table.float("latitude")
+    table.float("longitude")
+    table.string("country_code")
     table.string("trip_detail")
-    table.integer('workout_users_id').references('workout_users.id').unsigned().onDelete('cascade');
+    table.integer("passport_users_id").references("passport_users.id").unsigned().onDelete("cascade");
   });
 };
 
