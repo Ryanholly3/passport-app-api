@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Ryanholly3/passport-app-api/issues"
   },
-  "homepage": "https://github.com/Ryanholly3/passport-app-api#readme"
+  "homepage": "https://github.com/Ryanholly3/passport-app-api#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
 }
