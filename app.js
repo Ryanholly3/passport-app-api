@@ -2,10 +2,14 @@ const express = require("express");
 const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3500;
 
 app.use(bodyParser.json());
 app.use(cors()); 
+
+app.get('/', (req, res) => {
+  res.json("ayyy")
+});
 
 app.use(notFound);
 app.use(errorHandler);
@@ -15,7 +19,7 @@ function notFound(err, req, res, next) {
 };
 
 function errorHandler(err, req, res, next) {
-  console.error('NOPE, LOL', err)
+  console.error('Error', err)
   const stack =  process.env.NODE_ENV !== 'production' ? err.stack : undefined
   res.status(500).send({error: err.message, stack, url: req.originalUrl})
 };
