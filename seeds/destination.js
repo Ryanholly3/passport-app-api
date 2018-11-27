@@ -8,7 +8,8 @@ exports.seed = function(knex, Promise) {
           latitude: 48.8566,
           longitude: 2.3522,
           country_code: "FR",
-          trip_detail: "I want to visit the eiffel tower!"
+          trip_detail: "I want to visit the eiffel tower!",
+          
         },
         {
           id: 2,

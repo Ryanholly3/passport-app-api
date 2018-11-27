@@ -1,8 +1,8 @@
 exports.seed = function(knex, Promise) {
-  return knex("user")
+  return knex("passport-user")
     .del()
     .then(function() {
-      return knex("user").insert([
+      return knex("passport-user").insert([
         {
           id: 1,
           name: "Ryan Holly",
