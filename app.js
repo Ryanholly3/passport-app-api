@@ -2,6 +2,9 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const usersPath = require('./routes/passport_users')
+const destinationsPath = require('./routes/destinations')
+const visitedPath = require('./routes/visited')
 const port = process.env.PORT || 3100;
 
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -9,8 +12,12 @@ app.use(bodyParser.json());
 app.use(cors()); 
 
 app.get("/", (req, res, next) => {
-  res.send("This works")
+  res.send("Passport App")
 });
+
+app.use('/passport_users', usersPath);
+app.use('/destination', destinationsPath);
+app.use('/visited', visitedPath);
 
 app.use(notFound);
 app.use(errorHandler);
