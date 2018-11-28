@@ -7,7 +7,7 @@ function getUsers(){
 		.select('*')
 }
 
-function getDestinationsForUser(user){
+function getDestinationForUser(user){
 	return knex('destination')
 		.select(knex.raw('destination.id as destination_id, destination.date, destination.distance, destination.difficulty, destination.notes'))
 		.innerJoin('passport_users', 'passport_users.id', 'destination.passport_users_id')
