@@ -9,14 +9,14 @@ const port = process.env.PORT || 3100;
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json());
-app.use(cors()); 
+app.use(cors());
 
 app.get("/", (req, res, next) => {
   res.send("Passport App")
 });
 
 app.use('/passport_users', usersPath);
-app.use('/destination', destinationsPath);
+app.use('/destinations', destinationsPath);
 app.use('/visited', visitedPath);
 
 app.use(notFound);

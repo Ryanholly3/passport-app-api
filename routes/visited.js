@@ -4,8 +4,8 @@ const knex = require("../db/connection");
 
 router.get('/', (req, res) => {
 	knex('visited')
-    .then(visits => {
-		  res.json({ visits })
+    .then(visited => {
+		  res.json({ visited })
 		})
 })
 
