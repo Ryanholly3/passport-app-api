@@ -22,7 +22,6 @@ function getVisitedForUser(user){
 }
 
 router.get('/', (req, res, next) => {
-  const id = req.params.id;
 
 	function getUsersWithPassports(){
 		return getUsers()

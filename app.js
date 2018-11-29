@@ -5,6 +5,7 @@ const cors = require("cors");
 const usersPath = require('./routes/passport_users')
 const destinationsPath = require('./routes/destinations')
 const visitedPath = require('./routes/visited')
+const pinsPath = require('./routes/pins')
 const port = process.env.PORT || 3100;
 
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -18,6 +19,7 @@ app.get("/", (req, res, next) => {
 app.use('/passport_users', usersPath);
 app.use('/destinations', destinationsPath);
 app.use('/visited', visitedPath);
+app.use('/pins', pinsPath);
 
 app.use(notFound);
 app.use(errorHandler);
