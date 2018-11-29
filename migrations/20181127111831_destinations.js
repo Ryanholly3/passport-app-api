@@ -1,6 +1,7 @@
 exports.up = function(knex, Promise) {
   return knex.schema.createTable("destination", function(table) {
     table.increments()
+    table.string("name")
     table.float("latitude")
     table.float("longitude")
     table.string("country_code")

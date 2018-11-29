@@ -9,14 +9,14 @@ function getUsers(){
 
 function getDestinationForUser(user){
 	return knex('destination')
-		.select(knex.raw('destination.id as destination_id, destination.latitude, destination.longitude, destination.country_code, destination.trip_detail'))
+		.select(knex.raw('destination.id as destination_id, destination.name, destination.latitude, destination.longitude, destination.country_code, destination.trip_detail'))
 		.innerJoin('passport_users', 'passport_users.id', 'destination.passport_users_id')
 		.whereIn('destination.passport_users_id', [user.id])
 }
 
 function getVisitedForUser(user){
 	return knex('visited')
-		.select(knex.raw('visited.id as visited_id, visited.latitude, visited.longitude, visited.country_code, visited.trip_detail'))
+		.select(knex.raw('visited.id as visited_id, visited.name, visited.latitude, visited.longitude, visited.country_code, visited.trip_detail'))
 		.innerJoin('passport_users', 'passport_users.id', 'visited.passport_users_id')
 		.whereIn('visited.passport_users_id', [user.id])
 }

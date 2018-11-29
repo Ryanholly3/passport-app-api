@@ -5,6 +5,7 @@ exports.seed = function(knex, Promise) {
       return knex("destination").insert([
         {
           id: 1,
+          name: "Paris, France",
           latitude: 48.8566,
           longitude: 2.3522,
           country_code: "FR",
@@ -13,6 +14,7 @@ exports.seed = function(knex, Promise) {
         },
         {
           id: 2,
+          name: "Phoenix, USA",
           latitude: 33.4484,
           longitude: -112.0740,
           country_code: "US",
@@ -21,6 +23,7 @@ exports.seed = function(knex, Promise) {
         },
         {
           id: 3,
+          name: "Dublin, Ireland",
           latitude: 53.3498,
           longitude: -6.2603,
           country_code: "IE",
@@ -29,6 +32,7 @@ exports.seed = function(knex, Promise) {
         },
         {
           id: 4,
+          name: "Portmore, Jamaica",
           latitude: 18.1096,
           longitude: -77.2975,
           country_code: "JM",
@@ -37,6 +41,7 @@ exports.seed = function(knex, Promise) {
         },
         {
           id: 5,
+          name: "Pyongchang, North Korea",
           latitude: 39.0392,
           longitude: 125.7625,
           country_code: "KP",
@@ -45,6 +50,7 @@ exports.seed = function(knex, Promise) {
         },
         {
           id: 6,
+          name: "Singapore, Singapore",
           latitude: 1.3521,
           longitude: 103.8198,
           country_code: "SG",
@@ -53,6 +59,7 @@ exports.seed = function(knex, Promise) {
         },
         {
           id: 7,
+          name: "Amsterdam, Netherlands",
           latitude: 52.3680,
           longitude: 4.9036,
           country_code: "NL",
@@ -61,6 +68,7 @@ exports.seed = function(knex, Promise) {
         },
         {
           id: 8,
+          name: "Mostar, Bosnia",
           latitude: 43.3438,
           longitude: 17.8078,
           country_code: "BA",
