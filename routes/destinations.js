@@ -2,11 +2,20 @@ const express = require("express");
 const router = express.Router();
 const knex = require("../db/connection");
 
+
+// router.get('/', (req, res) => {
+// 	knex('destination')
+//     .then(destinations => {
+// 		  res.json({ destinations })
+// 		})
+// })
+
 router.get('/', (req, res) => {
 	knex('destination')
-    .then(destinations => {
-		  res.json({ destinations })
-		})
+		.select(knex.raw('destination.id as destination_id, destination.name, destination.latitude, destination.longitude, passport_users.name, passport_users.email, passport_users.id as passport_users_id'))
+		.innerJoin('passport_users', 'passport_users.id', 'destination.passport_users_id')
+		.then(destinations => {
+			res.json({ destinations })})
 })
 
 router.get('/:id', (req, res) => {
