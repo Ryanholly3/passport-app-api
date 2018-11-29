@@ -21,18 +21,11 @@ function getVisitedForUser(user){
 		.whereIn('visited.passport_users_id', [user.id])
 }
 
-router.get('/:id', (req, res, next) => {
+router.get('/', (req, res, next) => {
   const id = req.params.id;
-  const intCheck = parseInt(id);
 
-	function getUser(){
-		return knex('passport_users')
-			.select('*')
-			.where('id', id)
-	}
-
-	function getUserWithPassports(){
-		return getUser()
+	function getUsersWithPassports(){
+		return getUsers()
 			.then(function(users){
 				return Promise.all(users.map(async (user)=> {
 						user.destinations = await getDestinationForUser(user)
@@ -42,7 +35,7 @@ router.get('/:id', (req, res, next) => {
 				)
 			}).then(users => res.json({ users }))
 		}
-	getUserWithPassports()
+	getUsersWithPassports()
 })
 
 router.get('/:id', (req, res, next) => {
