@@ -12,7 +12,7 @@ const knex = require("../db/connection");
 
 router.get('/', (req, res) => {
 	knex('destination')
-		.select(knex.raw('destination.id as destination_id, destination.name, destination.latitude, destination.longitude, passport_users.name, passport_users.email, passport_users.id as passport_users_id'))
+		.select(knex.raw('destination.id as destination_id, destination.name as destination_name, destination.latitude, destination.longitude, passport_users.name as name, passport_users.email, passport_users.id as passport_users_id'))
 		.innerJoin('passport_users', 'passport_users.id', 'destination.passport_users_id')
 		.then(destinations => {
 			res.json({ destinations })})
