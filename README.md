@@ -7,9 +7,9 @@ View repository for front-end [HERE](https://github.com/Ryanholly3/passport-app-
 
 ## Required Installations
 
-postgreSQL using HomeBrew:
+PostgreSQL using HomeBrew:
 ```sh
-brew install postgreSQL
+brew install postgresql
 ```
 
 Start a PostgreSQL server as a Brew service:
