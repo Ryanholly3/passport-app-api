@@ -5,14 +5,25 @@
 View repository for front-end [HERE](https://github.com/Ryanholly3/passport-app-client).
 
 
+## Required Installations
+
+postgreSQL using HomeBrew:
+```sh
+brew install postgreSQL
+```
+
+Start a PostgreSQL server as a Brew service:
+```sh
+brew services start postgresql
+```
+
+
 ## Run the Project
-Required Installation:
-psql
 
 On command line:
 
 ```sh
-git clone https://github.com/Ryanholly3/passport-app-api.git
+git clone git@github.com:Ryanholly3/passport-app-api.git
 cd passport-app-api
 npm install
 createdb passport
