@@ -5,7 +5,7 @@
 View repository for front-end [HERE](https://github.com/Ryanholly3/passport-app-client).
 
 
-## Required Installations
+## Required Installation(s)
 
 PostgreSQL using HomeBrew:
 ```sh
