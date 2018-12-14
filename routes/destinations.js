@@ -21,7 +21,9 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
   const id = req.params.id;
 	knex('destination')
-    .where('id', id)
+		.select(knex.raw('destination.id as destination_id, destination.name as destination_name, destination.latitude, destination.longitude, passport_users.name as name, passport_users.email, passport_users.id as passport_users_id'))
+		.innerJoin('passport_users', 'passport_users.id', 'destination.passport_users_id')
+		.where('destination.id', id)
     .then(destination => {
       if(!destination.length){
         next()
